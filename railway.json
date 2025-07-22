@@ -6,17 +6,11 @@
       "providers": ["python"],
       "phases": {
         "setup": {
-          "nixPkgs": ["python310", "nodejs", "mysql", "libmysqlclient-dev", "mariadb"],
-          "aptPkgs": ["default-libmysqlclient-dev", "libmariadb-dev"]
-        },
-        "install": {
-          "cmds": ["pip install -r requirements.txt"]
-        },
-        "build": {
-          "cmds": ["npm ci"]
+          "nixPkgs": ["python310", "nodejs", "mysql80"]
         }
       }
-    }
+    },
+    "buildCommand": "npm ci"
   },
   "deploy": {
     "startCommand": "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn iPLMver2.wsgi",
