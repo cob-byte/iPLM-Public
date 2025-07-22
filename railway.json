@@ -6,7 +6,7 @@
       "providers": ["python"],
       "phases": {
         "setup": {
-          "nixPkgs": ["...", "nodejs", "freetype", "pkg-config"]
+          "nixPkgs": ["...", "nodejs", "freetype", "freetype.dev", "libart_lgpl", "libart_lgpl.dev", "pkg-config"]
         }
       }
     },
