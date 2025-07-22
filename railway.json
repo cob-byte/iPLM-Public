@@ -9,8 +9,7 @@
           "nixPkgs": ["python310", "nodejs", "gcc", "libmysqlclient" ,"mysql80"]
         }
       }
-    },
-    "buildCommand": "npm ci"
+    }
   },
   "deploy": {
     "startCommand": "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn iPLMver2.wsgi",
