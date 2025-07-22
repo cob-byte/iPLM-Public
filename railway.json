@@ -6,10 +6,7 @@
       "providers": ["python"],
       "phases": {
         "setup": {
-          "nixPkgs": ["python310", "nodejs", "gcc", "pkg-config", "mysql80"]
-        },
-        "install": {
-          "cmds": ["pip install --upgrade pip"]
+          "nixPkgs": ["python310", "nodejs", "gcc", "libmysqlclient" ,"mysql80"]
         }
       }
     }
