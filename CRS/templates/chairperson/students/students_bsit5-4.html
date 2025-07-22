@@ -1,0 +1,82 @@
+{% extends 'chairperson/students/students_bsit.html' %}
+{% load static %}
+{% block bglogo %}        
+{% endblock %}   
+{% block info %}
+    <!-- BLOCK INFO -->
+    <div class="sideheader">Block Information</div>
+    <div class="blockinfo">
+        <div class="container">
+            <div class="row blockinforow">
+            <div class="col-3 blockcol" style="margin-top: 10px;">
+                <img src="{% static '/CRS/images/cIcons/person.png' %}" height="30" style="margin-right: 8px; margin-top:-10px;" class="unselectable">
+            </div>
+            <div class="col adviser">
+                
+                    <b class="advisertitle">Adviser</b> <br>
+                    <b class="advisername">{{adviserFullname}}</b>
+                
+            </div>                              
+            </div>
+            <hr>
+            <div class="row blockinforow">
+                <div class="col-3 blockcol" style="margin-top: 15px;">
+                    <img src="{% static '/CRS/images/cIcons/calendar.png' %}" height="35" style="margin-right: 8px; margin-top:-10px;" class="unselectable">
+                </div>
+                <div class="col">
+                    <a href="{% url 'cStudentSchedOnline' %}"><button class="blockinfobutton btn"><b>Schedule</b><br>Manage/View Schedule</button></a>
+                </div>                              
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}                    
+    <div class="container table-border">  
+        <div class="container table-block content-scrollbar">                                               
+            <div class="row">
+                <div class="table-title header-sticky"><span class="spanmarginleft">{{year}} | Block {{block1}}</span></div>                           
+                <table class="table table-style table-borderless table-sm">
+                    <tbody>
+                        <tr class="table-header header-sticky" style="top: 45px">
+                            <td></td>
+                            <td>Student No.</td>
+                            <td class="col-3">Last Name</td>
+                            <td class="col-3">First Name</td>
+                            <td>Middle Name</td>
+                            <td class="col-1 unselectable">View</td>
+                            <td class="col-1 unselectable">Edit</td>
+                        </tr>
+                        {% for item in bsit5 %}
+                        <tr>
+                            <td></td>
+                            <td>{{ item.studentID }}<!-- DB FACULTY NO --></td>
+                            <td>{{ item.studentUser.lastName }}<!-- DB LAST NAME --></td>
+                            <td>{{ item.studentUser.firstName }}<!-- DB FIRST NAME --></td>
+                            <td>{{ item.studentUser.middleName }}<!-- DB MIDDLE NAME --></td>
+                            <td>
+                                <a href="{% url 'profile1_1' item.pk %}">
+                                    <button class="minibutton unselectable"><!-- DB MANAGE FACULTY BUTTON BELOW -->
+                                        View
+                                    </button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'edit_students' item.pk %}">
+                                    <button class="minibutton unselectable"><!-- DB MANAGE FACULTY BUTTON BELOW -->
+                                        Edit
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            
+            </div>  
+
+        </div>
+    </div>
+{% endblock %}
+                   

@@ -1,0 +1,54 @@
+/******************DEPARTMENT CONTENT***********************/
+
+.full-overview-block {
+    width: 100%;  
+  }
+  
+  .year {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #a8b4c2;
+    font-weight:600;
+    margin-bottom: -20px;
+    margin-top: 20px;
+  }
+  
+  
+  .departmentblock {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #06529b;      
+    height: 70px;
+  }
+  
+  .departmentblock td {  
+    overflow: auto
+  }
+  
+  .depttitle {
+    margin-bottom: -10px;
+  }
+  
+  .smallbutton {
+    background-color: #06529b;
+    color: #fff;  
+    border: none;   
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; 
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 65px;
+    box-shadow: 0 1px 2px 0 #d3dbe4, 0 1.5px 5px 0 #d3dbe4;
+    transition: all 0.3s ease-in-out; 
+    padding: 4px;  
+    margin-top: 3px;
+  }
+
+  .smallbutton:hover {
+    background-color: #0892dd;    
+    transition: all 0.3s ease-in-out;     
+    text-decoration: none;
+    color: #fff;
+  }

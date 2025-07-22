@@ -1,0 +1,383 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>  {%block title%} {%endblock%} </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="{% static 'CRS/css/Applicants/sHomeStyle.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:200,300,400,600,700,900&subset=latin-ext" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="{% static 'CRS/images/sClassroom/iPLM.png' %}" type="image/png" sizes="16x16">
+    <!--NEW-->
+    
+    <style>
+
+        #subjectMessage {
+        margin-top: 50px;
+        margin-left: 1100px;
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 18px;
+        color: #ffffff;
+        font-family: 'Source Sans Pro';
+        background-color: #0C66CC;
+        border: 2px solid #0C66CC;
+        border-radius: 16px;
+        box-shadow: 0 0 10px rgb(199, 199, 199);
+        height: 70px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .alertError{
+    padding: 20px;
+    background-color: #f34e01;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 10px rgb(216, 216, 216);
+    bottom: 100px;
+    animation: zoom-in-zoom-out 1s ease;
+    margin-left: 500px;
+    margin-top: -860px;
+    }
+
+    .alertSuccess{
+    padding: 20px;
+    background-color: #3fb328;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 10px rgb(216, 216, 216);
+    bottom: 100px;
+    animation: zoom-in-zoom-out 1s ease;
+    margin-left: 500px;
+    margin-top: -860px;
+   
+    }
+
+    .closebtnError {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        }
+
+        .closebtnError:hover {
+            color: #a33908;
+        }
+
+        .closebtnSuccess {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        }
+
+        .closebtnSuccess:hover {
+            color: #1c6b0c;
+        }
+
+
+
+        @keyframes zoom-in-zoom-out {
+        0% {
+            transform: scale(1, 1);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+        }
+
+    
+	#Shape1, #Shape2, #Shape3, #Shape4 ,#Shape5
+	{
+		border: 1px solid 	#06529b;
+		background: 	#06529b;
+		font-size: 22px;
+		font-family: Source Sans Pro;
+        font-weight: normal;
+		margin-right: 10px;
+		color: white;
+		border-radius: 10px;
+		height: 60px;
+		width: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		position:absolute;
+		filter:drop-shadow(1px 1px 3px gray);
+	}
+	
+	#Shape1
+	{
+		top: -492px;
+        left: 60px;
+		
+	}
+
+	#Shape2
+	{
+        top: -401px;
+        left: 60px;
+	}
+
+	#Shape3
+	{
+		top: -308px;
+        left: 60px;
+		
+	}
+
+    #Shape4
+	{
+		top: -212px;
+		left: 60px;
+	}
+
+    #Shape5
+	{
+		top: -110px;
+		left: 60px;
+        
+	}
+	#File1
+	{
+		top: -491px;
+		left: 390px;
+	}
+	
+	#File2
+	{
+		top: -399px;
+        left: 390px;
+	}
+
+	#File3
+	{
+		top: -308px;
+        left: 390px;
+
+	}
+
+    #File4
+	{
+		top: -212px;
+		left: 390px;
+
+	}
+    
+    #File5
+	{
+        top: -110px;
+        left: 390px;
+
+	}
+	#File1, #File2, #File3, #File4, #File5
+	{
+		font-family: Source Sans Pro;
+		font-size:  22px;
+		background: none;
+		border-radius: 10px;
+		filter:drop-shadow(0px 5px 5px rgb(211, 211, 211));
+		height: 60px;
+		width: 300px;
+		outline: none;
+		position:absolute;
+	}
+	
+	::-webkit-file-upload-button
+	{
+		color: #06529B;
+		background: #f3f6ff;
+		padding: 13px;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	
+	::-webkit-file-upload-button:hover
+	{
+		background: #0892DD;
+        color: #FFFF
+	}
+	
+	
+	#submitbutton
+	{
+		border: 1px solid #06529b;
+        background: 	#06529b;
+		font-size: 22px;
+		font-family: Source Sans Pro;
+        font-weight: 700px;
+		cursor: pointer;
+		margin: 10px;
+		color: white;
+		transition: 0.8;
+		border-radius: 10px;
+		height: 60px;
+		width: 200px;
+		transition-duration: 0.4s;
+		position:absolute;
+        margin: 100px;
+		top: -80px;
+		left: 450px;
+	}
+	
+	#submitbutton:hover
+	{
+		
+		background-color: #0892DD;
+		border: 1px solid #0892DD;
+	}
+	
+	#imageForm
+	{
+		position:absolute;
+		top: 518px;
+		left: 740px;
+	}
+    
+    </style>
+</head>
+
+<body>
+
+
+{% block content %}
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <li>
+                    <p><br><br><img src="{% static 'CRS/images/Applicants/Students/Shifter/logotransparent.png' %}" width="300px" height="75px"><br><br>
+                </li>
+            </div>
+            <ul class="sidebar ul li a">
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        <!--End of Sidebar -->
+
+
+
+        <!-- Content -->
+        <div id="content">
+            <div class="container-fluid">
+                <!--Profile-->
+                <div class="sub-box row">
+                    <p class="text-profile">Student Applicant Profile</p>
+                </div>
+                <div class="profile-box row">
+                    
+                    {% block profile%}
+
+                    {%endblock%}
+                    
+                </div>
+                <!--END of Profile-->}
+
+              
+
+                <!--Edit Account-->
+                <p class="text-profile" id="edit">Re-Upload Files:</p>
+                    <div class="edit-box row">
+                        <div class="col-lg-5">
+                                <form method ="POST" action="" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {%block submission%}
+                                    {%endblock%}
+                                    {%if info.remarks == "Returned"%}
+                                     <a> <button type="submit" value="Submit" id="submitbutton"> Submit </button></a>
+                                    {%elif info.remarks == "Submitted"%}
+                                     <a> <button type="button" value="Submit" id="submitbutton"> Submit </button></a>
+                                     {% endif %}
+                                   
+                                </form>
+                            </div> 
+                        </div>               
+                    </div>
+                    <!--END of Edit Account-->
+
+                   
+
+                <!--Feedback-->
+                <p class="text-feedback" id="recieve-feedback">Feedback</p>
+                    <div class="recieve-feedback-box row" font="Lato">
+
+                        {{info.comment}}   
+                                
+                    </div>
+                    <!--END of Feedback-->
+
+                    <div class="profile-border row">
+                    
+                        <div class="col-12-lg">
+                            {% if messages %}
+                        {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                        <div class="alertSuccess">
+                            <span class="closebtnSuccess" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            {{ message }}
+                        </div>
+                        {% endif %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <div class="alertError">
+                            <span class="closebtnSuccess" onclick="this.parentElement.style.display='none';">&times;</span> 
+                            {{ message }}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+    {% endblock content %}   
+    <script type= "text/Javascript">
+        const types = ["File1", "File2", "File3", "File4", "File5"];
+        for(let x=0; x<5; x++){
+        var file = document.getElementById(types[x]);
+        file.onchange = function(e) {
+        var ext = this.value.match(/\.([^\.]+)$/)[1];
+        switch (ext) {
+            case 'pdf':
+            case 'PDF':
+            break;
+            default:
+            alert('File type you are uploading is incorrect. \nAccepted file is only PDF');
+            this.value = '';
+        }
+        };
+    }
+    </script>
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+    
+</body>
+
+</html>

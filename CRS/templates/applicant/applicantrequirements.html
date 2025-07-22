@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<title>Applicant</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:200,300,400,600,700,900&subset=latin-ext" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&subset=latin-ext' rel='stylesheet' type='text/css'>
+	  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'CRS/css/Applicants/Faculty/applicantreq.css' %}">
+
+  <!--  ICON -->
+  <link rel="icon" href="{% static '/CRS/images/cHome/iPLM.png' %}" type="image/png" sizes="16x16">
+
+  <style>
+
+
+
+	@keyframes MoveInFromBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(3rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+        
+  </style>
+	
+</head>
+
+<body> 
+
+<p id="backbutton"><a href="{% url 'applicant' %}"><button class="bckbtn">Back</button></Back></button></a></p>
+<div id="container-fluid">
+  <div class="content">
+    <div class="line"></div>
+    <div class="applicantreqtxt">
+      <p id="ApplicantRequirementtext">Applicant Requirements</p>
+    </div>
+    <div class="facultytxt">
+      <p id="Facultytext">Faculty</p>
+    </div>
+    <div class="subdesc">
+    <p id="SubDescription1">Be sure to have the following upon registration:</p>
+    </div>
+    <div class="subdesc1">
+      <p id="ListOfRequirements">
+        1. Curriculum Vitae
+        <br>
+        2. Certificate/s (Max. 10)
+        <br>
+        3. Credentials
+        <br>
+        4. Transcript of Records
+        <br>
+	      5. PDS
+      </p>
+    </div>
+    </div>
+
+    <div class="proceeddiv">
+      <a href="{% url 'applicant_facultyapplicationform' %}"> <!-- templates/Applicants/Faculty --><button id="proceedbutton">Proceed</button></a>
+    </div>
+
+</div>    
+    <!-- tether, jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+	
+</body>
+
+</html>

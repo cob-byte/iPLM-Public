@@ -1,0 +1,384 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student | Study Plan </title>
+    <link rel="icon" href="https://i.postimg.cc/Z5Kc9KQv/iplm-logo.png">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="{% static 'CRS/css/sOthers/sStudyplan4.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+
+
+    <style>
+            #saveacopybtn {
+            width: 180px;
+            height: 60px;
+            background: #0C66CC;
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-family: 'Nunito';
+            float: right;
+            margin-right: 150px;
+            margin-top: 20px;
+            border: 2px solid #0C66CC;
+            }
+
+            #saveacopybtn:hover {
+                background: #2852a4;
+            }
+    </style>
+</head>
+<div class="wrapper">        
+    <body>
+            <!-- Sidebar -->
+        <!-- top bar -->
+ <div class="topbar">
+  <a href="{% url 'sHome' %}" class="iplm-logo">
+    <img src="https://i.postimg.cc/Z5Kc9KQv/iplm-logo.png" class="logo" />
+    <div class="logo-text">
+      <div class="logo-main">iPLM</div>
+      <div class="logo-sub">Integrated PLM</div>
+    </div>
+  </a>
+  <div class="center-region">
+    <div class="empty"></div>
+    <div id="notif-button" class="notif">
+      <img
+        class="notif-icon"
+        src="https://i.ibb.co/0XVd3kP/notification.png"
+        alt="notification"
+      />
+      <div id="notif-window" class="notif-content">
+        <div class="notif-triangle"></div>
+        <div class="notif-header">Notifications</div>
+        <div class="notif-items">
+          <a href="{% url 'LOANotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/Gp0457xb/LOA.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">Leave of Absence Feedback</div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+
+          <a href="{% url 'HDNotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/mkhZDCyd/honorabledismissal.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">
+                Honorable Dismissal Feedback
+              </div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+
+          <a href="{% url 'SPNotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/PJfpMCzZ/studyplan.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">Study Plan Feedback</div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+
+          <a href="{% url 'GradesNotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/NMm7n2Hz/mygrades.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">My Grades Feedback</div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+
+          <a href="{% url 'OJTNotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/SK7xtyKG/practicum.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">Practicum Feedback</div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+
+          <a href="{% url 'OutboundNotifdetails' %}" class="notif-item">
+            <img
+              class="notif-item-icon"
+              src="https://i.postimg.cc/Kzf01wnM/shifting-form.png"
+              alt="img"
+            />
+            <div class="notif-item-text">
+              <div class="notif-item-title">Outbound Shifting Feedback</div>
+              <div class="notif-item-detail">View details</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="personal-info" id="dropdown-button">
+    <div class="user-details">
+      <div class="client-classification">Student</div>
+      <div class="client-name">
+        {{user.firstName}} {{user.middleName}} {{user.lastName}}
+      </div>
+    </div>
+    <div class="dropdown">
+      <img
+        src="{% static 'CRS/images/fHomeAndProfile/userprofile.png' %}"
+        class="profile-dropdown"
+      />
+      <div class="dropdown-content" id="dropdown-window">
+        <div class="dropdown-header">
+          <img
+            src="{% static 'CRS/images/fHomeAndProfile/userprofile.png' %}"
+            class="dropdown-icon"
+          />
+          <div class="dropdown-details">
+            <div class="dropdown-name">{{user.firstName}}</div>
+            <div class="dropdown-email">{{user.email}}</div>
+          </div>
+        </div>
+        <div class="dropdown-items">
+          <a href="{% url 'sProfile' %}" class="dropdown-item"
+            >View Profile</a
+          >
+          <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          <!-- content -->
+          <div class="content">
+           <!-- side bar  -->
+                 <!-- side bar  -->
+      <div class="sidebar">
+        <a href="{% url 'sHome' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/DZS58F2h/home-button-iplm.png"
+          />
+          <span class="sidebar-item-text">Home</span>
+        </a>
+        <div class="sidebar-divider">CLASSROOM</div>
+        <a href="{% url 'sScheduleView' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/3R4bxwDX/schedule.png"
+          />
+          <span class="sidebar-item-text">Schedule</span>
+        </a>
+        <a href="{% url 'sChecklist' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/J7jP6v3z/checklist.png"
+          />
+          <span class="sidebar-item-text">Checklist</span>
+        </a>
+        <a href="{% url 'donecrs' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/NMm7n2Hz/mygrades.png"
+          />
+          <span class="sidebar-item-text">My Grades</span>
+        </a>
+        <div class="sidebar-divider">OTHERS</div>
+        <a href="{% url 'donesp' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/PJfpMCzZ/studyplan.png"
+          />
+          <span class="sidebar-item-text">Study Plan</span>
+        </a>
+        <a href="{% url 'doneLoa' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/Gp0457xb/LOA.png"
+          />
+          <span class="sidebar-item-text">Leave of Absence</span>
+        </a>
+        <a href="{% url 'doneHd' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/mkhZDCyd/honorabledismissal.pngg"
+          />
+          <span class="sidebar-item-text">Honorable Dismissal</span>
+        </a>
+        <a href="{% url 'donepracticum' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/SK7xtyKG/practicum.png"
+          />
+          <span class="sidebar-item-text">Practicum</span>
+        </a>
+        <a href="{% url 'doneOSF' %}" class="sidebar-item">
+          <img
+            class="sidebar-icon"
+            src="https://i.postimg.cc/Kzf01wnM/shifting-form.png"
+          />
+          <span class="sidebar-item-text">Outbound Shifting</span>
+        </a>
+      </div>
+            <!-- End of Sidebar -->
+            <!-- main content DITO NYO LAGAY MGA PUCHU PUCHU NYO -->
+                
+            <!-- Content -->
+            <div class="main-content"> 
+                <div class="container-fluid">
+                    <div class="backrw row" style="margin-top: 0px;">
+                        <p id="head1">
+                             Study Plan
+                         </p> 
+                    </div>
+    
+               <!-- Progress Bar -->
+               <div class="row">
+                <div class="container-fluid"> 
+                        <div class="progress row">
+                            <div class="col-lg-12">
+                                <div class="progress-bar "></div>
+                                <div class="progressbar">
+                                    <div class="progress-bars "></div>
+                                    <li class="active progress-text-active">Upcoming<br>Semester</br><img src="https://i.ibb.co/Kw0K42B/check.png" width="45" height="45" style="margin-top: -180px;"></li>
+                                    <li class="active progress-text-active">Subjects<br>Taken</br><img src="https://i.ibb.co/Kw0K42B/check.png" width="45" height="45" style="margin-top: -180px;"></li>
+                                    <li class="active progress-text-active">Study<br>Plan</br><img src="https://i.ibb.co/Kw0K42B/check.png" width="45" height="45" style="margin-top: -180px;"></li>  
+                                    <li class="active progress-text-active">Upload<br>Documents</li>
+                                    <li class="progress-text">Confirm<br>Submission</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!--END Progress Bar-->
+
+            
+         <!------Upload content------>
+                <div class="upload row">
+                    <div class="col-lg-12">
+                    
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="box1"> <br/><br/>
+                                    <p id="head2"><b>Upload Documents</b><br></p>
+                                    <div class="upload-border"></div>
+                                <p id="head3"><br>Please upload your Study Plan.</p>
+                            
+                            {% if messages %}
+                            {% for message in messages %}
+                            <p id="head3">{{ message }}</p>
+                            {% endfor %}    
+                            {% endif %}
+                        
+
+                        <form method="POST" enctype="multipart/form-data">
+                            {%csrf_token%}   
+                        <div>
+                            <button style="padding-left: 20px;" id="button2hvr">Study Plan</button>
+                            <input type="file" id="studyPlanUp" name="studyPlanUp" accept= ".pdf">
+                        </div>    
+                        </div>
+                        </div>
+                        
+                       <!-----------SUBMIT BUTTON------->
+                       <div>
+                       <div class="rows">
+                        <br><button type="submit"  id="submitbtn" style ="left:-500px">Submit</button></a>
+                        
+                    </div>
+
+                    <div>
+                        <a href="{% url 'stdplnview' %}"><img src="https://i.ibb.co/k027N7K/arrow-left.png" height="50;" width="50;" style="margin-left:850px; margin-top:-91px"></a>
+                    </div>
+                        <!-- <div class="col-lg-12"><img src="{% static 'CRS/images/sOthers/clip-remote.png' %}" height="210px" width="350px"> -->
+                            
+                        </div>
+                        </div>
+                    </div>
+                        
+                        
+                        
+                        </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- END Upload Content -->
+
+
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+          var notifWindow = document.getElementById("notif-window");
+
+document
+  .getElementById("notif-button")
+  .addEventListener("click", function () {
+    var display = notifWindow.style.display === "flex" ? "none" : "flex";
+    notifWindow.style.display = display;
+  });
+var profileDropdown = document.getElementById("dropdown-window");
+document
+  .getElementById("dropdown-button")
+  .addEventListener("click", function () {
+    var display =
+      profileDropdown.style.display === "flex" ? "none" : "flex";
+    profileDropdown.style.display = display;
+  });
+        optionsList.forEach(o => {
+            o.addEventListener("click", () => {
+                selected.innerHTML = o.querySelector("label").innerHTML;
+                optionsContainer.classList.remove("active");
+            });
+        });
+        const types = ["studyPlanUp"];
+                        for(let x=0; x<5; x++){
+                        var file = document.getElementById(types[x]);
+                        file.onchange = function(e) {
+                        var ext = this.value.match(/.([^.]+)$/)[1];
+                        switch (ext) {
+                            case 'pdf':
+                            case 'PDF':
+                            break;
+                            default:
+                            alert('File type you are uploading is incorrect. \nAccepted file is only PDF');
+                            this.value = '';
+                        }
+                        };
+                    }
+                    </script>
+    </script>
+
+</body>
+
+</html>
