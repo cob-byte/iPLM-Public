@@ -1,4 +1,3 @@
-from tkinter import Entry
 from django import forms
 import datetime
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
