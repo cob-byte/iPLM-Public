@@ -1,0 +1,129 @@
+.csw-h1 {
+    color: #0892dd;
+  }
+  textarea {
+    width: 75%;
+    min-height: 160px;
+    padding: 12px;
+    border-radius: 5px;
+    border-style: none;
+    resize: vertical;
+    color: #0b0c0c;
+    font-size: 16px;
+    font-weight:500;
+    font-family: 'Source Sans Pro', sans-serif;            
+    margin-bottom: 15px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.tablestyle {
+  margin-top: 70px;
+  font-family: 'Source Sans Pro';
+  color: #06529b;
+}
+
+.tablestyle2 {
+  margin-top: 50px;
+  font-family: 'Source Sans Pro';
+  color: #06529b;
+}
+
+input[type=text] {
+  border: 1px solid #0892dd;
+  border-radius: 5px;
+  resize: vertical;
+  color: #0d0e0e;
+  font-size: 15px;
+  font-weight:400;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-indent: 10px;
+  display: inline-block;
+  width: 290px;
+}
+
+.style1 {
+  font-weight: 700;
+}
+
+.style2 {
+  color: #5F6E83;
+  font-size: 14px;
+}
+
+.style2 b {
+  color: #0892dd;
+  font-weight: 700;
+}
+
+#cSignatureFile, #cSignatureFile-2 {
+  background-color: #fff;
+  width: 190px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+::-webkit-file-upload-button {
+    background-color: #06529b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;       
+    padding: 5px 10px 5px 10px;   
+    margin-right: 10px;  
+  }
+  
+  ::-webkit-file-upload-button:hover, .submitButton:hover{
+    background-color: #0892dd;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .submitButton{
+    background-color: #06529b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    padding: 8px 13px 8px 13px;   
+    width: 150px;
+    text-align: center;
+  }
+
+
+.alertError {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #fd0b0b;
+    box-shadow: 0 0 10px rgb(216 216 216);
+    animation: zoom-in-zoom-out 1s ease;
+    font-size: 16px;
+    width: 300px;
+}
+
+.alertSuccess {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #06529b;
+    box-shadow: 0 0 10px rgb(216 216 216);
+    animation: zoom-in-zoom-out 1s ease;
+    font-size: 16px;
+    width: 300px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: #06529b;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+ }
