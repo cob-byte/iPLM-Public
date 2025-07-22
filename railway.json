@@ -6,7 +6,7 @@
       "providers": ["python"],
       "phases": {
         "setup": {
-          "nixPkgs": ["python310", "nodejs", "gcc", "libmysqlclient" ,"mysql80"]
+          "nixPkgs": ["python310", "nodejs", "gcc"]
         }
       }
     }

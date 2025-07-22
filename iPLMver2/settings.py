@@ -14,9 +14,11 @@ from pathlib import Path
 import os
 import environ
 from datetime import timedelta
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+pymysql.install_as_MySQLdb()
 
 ### setting up env
 env = environ.Env(
