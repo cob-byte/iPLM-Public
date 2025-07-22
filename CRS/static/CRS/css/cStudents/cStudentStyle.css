@@ -92,7 +92,6 @@ a:focus {
 
 .back-btn:hover,
 .back-btn:focus {
-  background-image: url("chairpersonstud_back.svg");
   filter: brightness(0) saturate(100%) invert(29%) sepia(100%) saturate(1155%) hue-rotate(190deg) brightness(91%) contrast(100%);
 }
 
