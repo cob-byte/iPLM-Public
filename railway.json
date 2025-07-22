@@ -9,12 +9,7 @@
           "nixPkgs": [
             "...",
             "nodejs",
-            "freetype",
-            "freetype.dev",
-            "libart_lgpl",
-            "libart_lgpl.dev",
             "cairo",
-            "cairo.dev",
             "pkg-config"
           ]
         }
