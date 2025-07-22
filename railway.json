@@ -6,20 +6,20 @@
       "providers": ["python"],
       "phases": {
         "setup": {
-          "nixPkgs": ["python310", "nodejs"],
-          "aptPkgs": ["libmariadb-dev", "pkg-config"]
+          "nixPkgs": ["python310", "nodejs", "mysql", "libmysqlclient-dev", "mariadb"],
+          "aptPkgs": ["default-libmysqlclient-dev", "libmariadb-dev"]
         },
         "install": {
           "cmds": ["pip install -r requirements.txt"]
         },
         "build": {
-          "cmds": ["python manage.py collectstatic --noinput"]
+          "cmds": ["npm ci"]
         }
       }
     }
   },
   "deploy": {
-    "startCommand": "python manage.py migrate && gunicorn iPLMver2.wsgi",
+    "startCommand": "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn iPLMver2.wsgi",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
