@@ -26,10 +26,10 @@ html5lib==1.1
 idna==3.3
 lxml
 MarkupPy==1.14
-mysql
-mysql-connector
-mysql-connector-python
-mysqlclient
+mysql==0.0.3
+mysql-connector==2.2.9
+mysql-connector-python==8.0.29
+mysqlclient==2.1.0
 odfpy==1.4.1
 openpyxl==3.0.9
 oscrypto==1.3.0
