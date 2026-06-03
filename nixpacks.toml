@@ -1,0 +1,7 @@
+[variables]
+NIXPACKS_PYTHON_VERSION = "3.10"
+
+[phases.setup]
+nixPkgs = ["...", "pkg-config", "freetype"]
+nixLibs = ["...", "freetype.dev"]
+aptPkgs = ["...", "libfreetype6-dev"]
